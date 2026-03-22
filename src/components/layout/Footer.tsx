@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import { Github, Heart } from 'lucide-react'
 
 export function Footer() {
@@ -14,8 +15,20 @@ export function Footer() {
           </div>
 
           <div className="flex items-center gap-6">
+            <Link
+              to="/privacy"
+              className="text-sm text-[var(--text-secondary)] hover:text-[var(--text-primary)] transition-colors"
+            >
+              Privacy Policy
+            </Link>
+            <Link
+              to="/terms"
+              className="text-sm text-[var(--text-secondary)] hover:text-[var(--text-primary)] transition-colors"
+            >
+              Terms of Service
+            </Link>
             <a
-              href="https://github.com"
+              href="https://github.com/Serbanya/QA_tools"
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center gap-2 text-sm text-[var(--text-secondary)] hover:text-[var(--text-primary)] transition-colors"

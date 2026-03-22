@@ -7,6 +7,8 @@ import { CsvTool } from './pages/CsvTool'
 import { TestDataTool } from './pages/TestDataTool'
 import { CurlTool } from './pages/CurlTool'
 import { CharacterCounter } from './pages/CharacterCounter'
+import { PrivacyPolicy } from './pages/PrivacyPolicy'
+import { TermsOfService } from './pages/TermsOfService'
 
 function App() {
   return (
@@ -19,6 +21,8 @@ function App() {
         <Route path="/testdata" element={<TestDataTool />} />
         <Route path="/curl" element={<CurlTool />} />
         <Route path="/characters" element={<CharacterCounter />} />
+        <Route path="/privacy" element={<PrivacyPolicy />} />
+        <Route path="/terms" element={<TermsOfService />} />
       </Routes>
     </Layout>
   )
