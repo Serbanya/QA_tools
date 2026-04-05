@@ -1,5 +1,5 @@
 import { Link, useLocation } from 'react-router-dom'
-import { FileJson, FileCode, Table, Menu, X, Moon, Sun, UserPlus, Terminal, Type } from 'lucide-react'
+import { FileJson, FileCode, Table, Menu, X, Moon, Sun, UserPlus, Terminal, Type, GitCompareArrows, Binary } from 'lucide-react'
 import { useState, useEffect } from 'react'
 import { cn } from '../../utils/cn'
 
@@ -10,6 +10,8 @@ const navItems = [
   { path: '/testdata', label: 'Test Data', icon: UserPlus },
   { path: '/curl', label: 'cURL', icon: Terminal },
   { path: '/characters', label: 'Counter', icon: Type },
+  { path: '/diff', label: 'Compare', icon: GitCompareArrows },
+  { path: '/base64', label: 'Base64', icon: Binary },
 ]
 
 export function Header() {

@@ -1,0 +1,1 @@
+<response><data><correctName>null</correctName><errorDescription>VOP Responding PSP configuration mismatch</errorDescription><errorCode>FORMAT_ERROR</errorCode><status>UNVERIFIABLE</status></data><status><correlationId>WEBAPI-84e8f466-f02d-44d9-9623-325f3d7ee42e</correlationId><isSuccess>true</isSuccess><statusCode>200</statusCode></status></response>А

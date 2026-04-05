@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-import { FileJson, FileCode, Table, ArrowRight, Zap, Shield, Cloud, UserPlus, Terminal, Type } from 'lucide-react'
+import { FileJson, FileCode, Table, ArrowRight, Zap, Shield, Cloud, UserPlus, Terminal, Type, GitCompareArrows, Binary } from 'lucide-react'
 import { Card, CardContent } from '../components/ui/Card'
 import { AdBanner } from '../components/layout/AdBanner'
 
@@ -45,6 +45,20 @@ const tools = [
     description: 'Count characters, words, sentences, and analyze text statistics',
     icon: Type,
     color: 'from-rose-500 to-red-500',
+  },
+  {
+    path: '/diff',
+    title: 'Code Compare',
+    description: 'Compare two texts side-by-side with highlighted differences, like Meld',
+    icon: GitCompareArrows,
+    color: 'from-lime-500 to-green-500',
+  },
+  {
+    path: '/base64',
+    title: 'Base64 Encoder/Decoder',
+    description: 'Encode and decode Base64, decode to files with preview and download',
+    icon: Binary,
+    color: 'from-orange-500 to-amber-500',
   },
 ]
 
