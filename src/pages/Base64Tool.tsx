@@ -5,6 +5,11 @@ import { Button } from '../components/ui/Button'
 import { AdBanner } from '../components/layout/AdBanner'
 import { copyToClipboard } from '../utils/fileDownload'
 
+function bytesToBlob(bytes: Uint8Array, mime: string): Blob {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  return new Blob([bytes as any], { type: mime })
+}
+
 function base64ToBytes(base64: string): Uint8Array {
   const cleaned = base64.replace(/\s/g, '')
   const binary = atob(cleaned)
@@ -123,7 +128,7 @@ export function Base64Tool() {
       // Preview for images
       if (previewUrl) URL.revokeObjectURL(previewUrl)
       if (detected.mime.startsWith('image/')) {
-        const blob = new Blob([bytes.buffer.slice(bytes.byteOffset, bytes.byteOffset + bytes.byteLength)], { type: detected.mime })
+        const blob = bytesToBlob(bytes, detected.mime)
         setPreviewUrl(URL.createObjectURL(blob))
       } else {
         setPreviewUrl(null)
@@ -183,7 +188,7 @@ export function Base64Tool() {
       const cleaned = stripDataUri(textInput).replace(/\s/g, '')
       const bytes = base64ToBytes(cleaned)
       const detected = detectMimeType(bytes)
-      const blob = new Blob([bytes.buffer.slice(bytes.byteOffset, bytes.byteOffset + bytes.byteLength)], { type: detected.mime })
+      const blob = bytesToBlob(bytes, detected.mime)
       const url = URL.createObjectURL(blob)
       const a = document.createElement('a')
       a.href = url
