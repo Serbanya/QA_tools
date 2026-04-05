@@ -169,11 +169,9 @@ export function DiffTool() {
         unifiedDiff += prefix + line + '\n'
       }
     }
-    const success = await copyToClipboard(unifiedDiff)
-    if (success) {
-      setCopied(true)
-      setTimeout(() => setCopied(false), 2000)
-    }
+    await copyToClipboard(unifiedDiff)
+    setCopied(true)
+    setTimeout(() => setCopied(false), 2000)
   }, [left, right])
 
   const handleExportDiff = useCallback(() => {

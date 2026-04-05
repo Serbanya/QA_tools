@@ -424,11 +424,9 @@ Reading time: ${stats.readingTime}`
                 size="sm"
                 onClick={async () => {
                   const generated = generateLorem(loremCount, loremUnit, loremStart, loremUnit === 'paragraphs' ? loremWordsPerParagraph : undefined)
-                  const success = await copyToClipboard(generated)
-                  if (success) {
-                    setLoremCopied(true)
-                    setTimeout(() => setLoremCopied(false), 2000)
-                  }
+                  await copyToClipboard(generated)
+                  setLoremCopied(true)
+                  setTimeout(() => setLoremCopied(false), 2000)
                 }}
               >
                 <Copy className="w-4 h-4 mr-1" />
