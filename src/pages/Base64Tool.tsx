@@ -123,7 +123,7 @@ export function Base64Tool() {
       // Preview for images
       if (previewUrl) URL.revokeObjectURL(previewUrl)
       if (detected.mime.startsWith('image/')) {
-        const blob = new Blob([bytes.buffer], { type: detected.mime })
+        const blob = new Blob([bytes.buffer.slice(bytes.byteOffset, bytes.byteOffset + bytes.byteLength)], { type: detected.mime })
         setPreviewUrl(URL.createObjectURL(blob))
       } else {
         setPreviewUrl(null)
@@ -183,7 +183,7 @@ export function Base64Tool() {
       const cleaned = stripDataUri(textInput).replace(/\s/g, '')
       const bytes = base64ToBytes(cleaned)
       const detected = detectMimeType(bytes)
-      const blob = new Blob([bytes.buffer], { type: detected.mime })
+      const blob = new Blob([bytes.buffer.slice(bytes.byteOffset, bytes.byteOffset + bytes.byteLength)], { type: detected.mime })
       const url = URL.createObjectURL(blob)
       const a = document.createElement('a')
       a.href = url
